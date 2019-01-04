@@ -4,6 +4,7 @@ module.exports = {
   */
   head: {
     title: 'my-first-nuxt-app',
+    // タイトル設定
     titleTemplate: '%s | Nuxt.js tag items viewer',
     meta: [
       { charset: 'utf-8' },
@@ -18,6 +19,7 @@ module.exports = {
   ** Customize the progress bar color
   */
   loading: { color: '#3B8070' },
+  // axios追加
   modules: [
     '@nuxtjs/axios',
   ],
@@ -27,8 +29,17 @@ module.exports = {
   plugins: [
     '~/plugins/axios.js'
   ],
+  // Qiita  アクセストークンの設定
   env: {
     QIITA_TOKEN: process.env.QIITA_TOKEN
+  },
+  /**
+   * Middleware setting
+   */
+  router: {
+    middleware: [
+      'auth'  // 認証ミドルウェア追加
+    ]
   },
   /*
   ** Build configuration
