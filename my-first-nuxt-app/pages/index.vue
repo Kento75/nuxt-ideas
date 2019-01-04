@@ -22,12 +22,19 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
-  async asyncData({ app }) {
-    const items = await app.$axios.$get('https://qiita.com/api/v2/items?query-tag:nuxt.js')
-    return {
-      items
+  async asyncData({ store }) {
+    // storeにすでにデータが存在する場合は非同期処理を行わない
+    if(store.getters['items'].length) {
+      return
     }
+    // qiita api を使用して記事一覧を取得する
+    await store.dispatch('fetchItems')
+  },
+  computed: {
+    ...mapGetters(['items'])
   }
 }
 </script>
