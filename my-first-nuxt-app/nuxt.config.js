@@ -27,7 +27,8 @@ module.exports = {
     
   },
   plugins: [
-    '~/plugins/axios.js'
+    '~/plugins/axios.js',
+    '~/plugins/logger.js'
   ],
   // Qiita  アクセストークンの設定
   env: {
