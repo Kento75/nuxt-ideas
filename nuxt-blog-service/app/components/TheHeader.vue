@@ -7,6 +7,10 @@
       投稿一覧
     </el-menu-item>
 
+    <el-menu-item index="3" style="float: right;" :route="{ path: `/users/${user.id}` }" v-if="user">
+      {{ user.id }}
+    </el-menu-item>
+
     <no-ssr>
       <el-menu-item index="4" style="float: right;" :route="{ path: '/' }">
         <span>ログイン</span>
@@ -17,3 +21,13 @@
     </el-menu-item>
   </el-menu>
 </template>
+
+<script>
+import { mapGetters } from 'vuex'
+
+export default {
+  computed: {
+    ...mapGetters(['user'])
+  }
+}
+</script>
