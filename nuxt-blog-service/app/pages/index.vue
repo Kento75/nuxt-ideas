@@ -22,6 +22,7 @@
 
 <script>
 import { mapGetters, mapActions } from 'vuex'
+import Cookies from 'universal-cookie'
 
 export default {
   asyncData({ redirect, store }) {
@@ -39,10 +40,13 @@ export default {
   computed: {
     buttonText() {
       return this.isCreateMode ? '新規登録' : 'ログイン'
-    }
+    },
+    ...mapGetters(['user'])
   },
   methods: {
     async handleClickSubmit() {
+      const cookies = new Cookies()
+
       // ユーザー作成モードの場合
       if(this.isCreateMode) {
         try {
@@ -55,6 +59,8 @@ export default {
             position: 'bottom-right',
             duration: 1000
           })
+
+          cookies.set('user', JSON.stringify(this.user))
           this.$router.push('/posts/')
         } catch(e) {
           // 作成完了通知ダイアログを表示
@@ -67,7 +73,7 @@ export default {
         } 
       } else {
         try {
-          await this.register({ ...this.formData })
+          await this.login({ ...this.formData })
           // 作成完了通知ダイアログを表示
           this.$notify({
             type: 'success',
@@ -76,6 +82,8 @@ export default {
             position: 'bottom-right',
             duration: 1000
           })
+
+          cookies.set('user', JSON.stringify(this.user))
           this.$router.push('/posts/')
         } catch(e) {
           // 作成完了通知ダイアログを表示

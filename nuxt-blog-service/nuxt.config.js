@@ -3,6 +3,11 @@ const pkg = require('./package')
 module.exports = {
   mode: 'universal',
   srcDir: 'app',
+  router: {
+    middleware: [
+      'auth-cookie'
+    ]
+  },
   /*
   ** Headers of the page
   */
@@ -17,7 +22,6 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
-
   /*
   ** Customize the progress-bar color
   */
