@@ -8,6 +8,7 @@
         :data="showPosts"
         style="width: 100%"
         class="table"
+        @row-click="handleClick"
       >
         <el-table-column
           prop="title"
@@ -42,8 +43,8 @@ export default {
   computed: {
     showPosts() {
       return this.posts.map(post => {
-        post.created_at = moment(post.created_at).format('YYYY/MM/DD HH:mm:ss')
-        return post
+        const created_at = moment(post.created_at).format('YYYY/MM/DD HH:mm:ss')
+        return { ...post, created_at }
       })
     },
     ...mapGetters('posts', ['posts'])
