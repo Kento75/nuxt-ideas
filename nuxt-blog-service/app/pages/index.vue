@@ -30,9 +30,9 @@ export default {
       }
     }
   },
-  compouted: {
+  computed: {
     buttonText() {
-      return this.isCreateMode ? '新規作成' : 'ログイン'
+      return this.isCreateMode ? '新規登録' : 'ログイン'
     }
   }
 }
