@@ -49,6 +49,7 @@ module.exports = {
   */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
+    baseURL: 'https://nuxt-blog-service-kento75.firebaseio.com'
   },
 
   /*
