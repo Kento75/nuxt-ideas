@@ -22,6 +22,7 @@
     "universal-cookie": "^3.0.7"
   },
   "devDependencies": {
+    "@vue/test-utils": "^1.0.0-beta.28",
     "jest": "^23.6.0",
     "nodemon": "^1.11.0"
   }
