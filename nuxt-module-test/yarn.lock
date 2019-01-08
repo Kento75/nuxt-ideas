@@ -9,7 +9,7 @@
   dependencies:
     "@babel/highlight" "^7.0.0"
 
-"@babel/core@^7.1.6":
+"@babel/core@^7.1.6", "@babel/core@^7.2.2":
   version "7.2.2"
   resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.2.2.tgz#07adba6dde27bb5ad8d8672f15fde3e08184a687"
   integrity sha512-59vB0RWt09cAct5EIe58+NzGP4TFSD3Bz//2/ELy3ZeTeKF6VTD1AXlH8BGGbCX0PuobZBsIzO7IAI9PH67eKw==
@@ -570,7 +570,7 @@
     core-js "^2.5.7"
     regenerator-runtime "^0.12.0"
 
-"@babel/preset-env@^7.1.6":
+"@babel/preset-env@^7.1.6", "@babel/preset-env@^7.2.3":
   version "7.2.3"
   resolved "https://registry.yarnpkg.com/@babel/preset-env/-/preset-env-7.2.3.tgz#948c8df4d4609c99c7e0130169f052ea6a7a8933"
   integrity sha512-AuHzW7a9rbv5WXmvGaPX7wADxFkZIqKlbBh1dmZUQp4iwiPpkE/Qnrji6SC4UQCQzvWY/cpHET29eUhXS9cLPw==
@@ -1459,6 +1459,11 @@ babel-core@^6.0.0, babel-core@^6.26.0:
     private "^0.1.8"
     slash "^1.0.0"
     source-map "^0.5.7"
+
+babel-core@^7.0.0-0:
+  version "7.0.0-bridge.0"
+  resolved "https://registry.yarnpkg.com/babel-core/-/babel-core-7.0.0-bridge.0.tgz#95a492ddd90f9b4e9a4a1da14eb335b87b634ece"
+  integrity sha512-poPX9mZH/5CSanm50Q+1toVci6pv5KSRv/5TWCwtzQS5XEwn40BcCrgIeMFWP9CKKIniKXNxoIOnOq4VVlGXhg==
 
 babel-generator@^6.18.0, babel-generator@^6.26.0:
   version "6.26.1"

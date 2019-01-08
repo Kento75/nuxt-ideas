@@ -18,7 +18,8 @@ const actions = {
   }
 }
 
-module.exports = {
+//module.exports = {
+export default {
   state,
   getters,
   mutations,
