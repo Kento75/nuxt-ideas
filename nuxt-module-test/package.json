@@ -22,8 +22,36 @@
     "universal-cookie": "^3.0.7"
   },
   "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
     "@vue/test-utils": "^1.0.0-beta.28",
+    "babel-core": "^7.0.0-0",
+    "babel-jest": "^23.6.0",
     "jest": "^23.6.0",
-    "nodemon": "^1.11.0"
+    "nodemon": "^1.11.0",
+    "vue-jest": "^3.0.2"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.js$": "babel-jest",
+      ".*\\.(vue)$": "vue-jest"
+    },
+    "moduleNameMapper": {
+      "^@/(.*)$": "<rootDir>/app/$1",
+      "^@@/(.*)$": "<rootDir>/$1",
+      "^~/(.*)$": "<rootDir>/app/$1",
+      "^~~/(.*)$": "<rootDir>/app/$1"
+    },
+    "moduleFileExtensions": ["js", "json", "vue"],
+    "collectCoverageFrom": ["app/**/*.{js, vue}"]
+  },
+  "babel": {
+    "env": {
+      "test": {
+        "presets": [
+          "@babel/preset-env"
+        ]
+      }
+    }
   }
 }
